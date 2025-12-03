@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Bomboclat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="f1-preloader">
+    <div class="start-lights-container">
+        <div class="light" id="light-1"></div>
+        <div class="light" id="light-2"></div>
+        <div class="light" id="light-3"></div>
+        <div class="light" id="light-4"></div>
+        <div class="light" id="light-5"></div>
+    </div>
+    
+     <div class="car-track">
+        <img id="f1-car" src="images/f1car.png" alt="F1 Car">
+    </div>
+    </div>
+</div>
+
+    <header>
+        <a href="#" class="logo">F1 Bomboclat</a>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#home" class="nav-link" onclick="closeMenu()">Home</a></li>
+                <li><a href="#next-race" class="nav-link" onclick="closeMenu()">Next Race</a></li>
+                <li><a href="#tires" class="nav-link" onclick="closeMenu()">Tyres</a></li>
+                <li><a href="#champions" class="nav-link" onclick="closeMenu()">Champions</a></li>
+                <li><a href="#standings" class="nav-link" onclick="closeMenu()">Standings</a></li>
+                <li><a href="#highlights" class="nav-link" onclick="closeMenu()">Highlights</a></li>
+                <li><a href="#feedback" class="nav-link" onclick="closeMenu()">Feedback</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙 Dark</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="car-section hidden-section">
+        <h2 class="section-title">Select Team</h2>
+        <div class="car-selector-container">
+            <div class="car-container">
+                <div class="arrow" id="prevBtn">&#10094;</div>
+                <div class="car-display" id="carDisplay">
+                    <img src="" alt="F1 Car" id="carImage">
+                </div>
+                <div class="arrow" id="nextBtn">&#10095;</div>
+            </div>
+        </div>
+        
+        <div class="team-info">
+            <h3 class="team-name" id="teamName">Team Name</h3>
+            <div class="car-model" id="carModel">Car Model</div>
+        </div>
+
+        <div class="drivers-container" id="driversContainer">
+        </div>
+    </section>
+
+    <section id="next-race" class="hidden-section">
+        <div class="glass-panel">
+            <h2 class="section-title">Next Grand Prix</h2>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap;">
+                <div>
+                    <h3 id="race-name" style="font-size: 1.5rem; color: var(--primary-red);">Loading...</h3>
+                    <p id="race-circuit" style="color: var(--text-secondary);">...</p>
+                </div>
+                <div id="race-status" style="color: var(--text-secondary); font-style: italic;">Upcoming</div>
+            </div>
+            
+            <div class="countdown-grid" id="countdown-ui">
+                <div class="time-box">
+                    <span class="time-val" id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="hours">00</span>
+                    <span class="time-label">Hrs</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="mins">00</span>
+                    <span class="time-label">Mins</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="secs">00</span>
+                    <span class="time-label">Secs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tires" class="tires-section hidden-section">
+        <h2 class="section-title">Pirelli Compounds</h2>
+        <div class="tires-grid">
+            <div class="tire">
+                <img src="images/soft.png" width="120" alt="Soft Tire" onerror="this.src='https://placehold.co/120x120/red/white?text=Soft'">
+                <span>Soft (C5-C3)</span>
+            </div>
+            <div class="tire">
+                <img src="images/medium.png" width="120" alt="Medium Tire" onerror="this.src='https://placehold.co/120x120/yellow/black?text=Medium'">
+                <span>Medium (C4-C2)</span>
+            </div>
+            <div class="tire">
+                <img src="images/hard.png" width="120" alt="Hard Tire" onerror="this.src='https://placehold.co/120x120/white/black?text=Hard'">
+                <span>Hard (C3-C1)</span>
+            </div>
+            <div class="tire">
+                <img src="images/inter.png" width="160" alt="Inter Tire" onerror="this.src='https://placehold.co/120x120/green/white?text=Inter'">
+                <span>Intermediate</span>
+            </div>
+            <div class="tire">
+                <img src="images/wet.png" width="120" alt="Wet Tire" onerror="this.src='https://placehold.co/120x120/blue/white?text=Wet'">
+                <span>Wet (Full)</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="champions" class="champions-section hidden-section">
+        <h2 class="section-title">World Champions (2015-2024)</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Driver</th>
+                        <th>Team</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="winner-ver"><td>2024</td><td><b>Max Verstappen</b></td><td>Red Bull Racing</td><td>(Leader)</td></tr>
+                    <tr class="winner-ver"><td>2023</td><td><b>Max Verstappen</b></td><td>Red Bull Racing</td><td>575</td></tr>
+                    <tr class="winner-ver"><td>2022</td><td><b>Max Verstappen</b></td><td>Red Bull Racing</td><td>454</td></tr>
+                    <tr class="winner-ver"><td>2021</td><td><b>Max Verstappen</b></td><td>Red Bull Racing</td><td>395.5</td></tr>
+                    <tr class="winner-ham"><td>2020</td><td><b>Lewis Hamilton</b></td><td>Mercedes</td><td>347</td></tr>
+                    <tr class="winner-ham"><td>2019</td><td><b>Lewis Hamilton</b></td><td>Mercedes</td><td>413</td></tr>
+                    <tr class="winner-ham"><td>2018</td><td><b>Lewis Hamilton</b></td><td>Mercedes</td><td>408</td></tr>
+                    <tr class="winner-ham"><td>2017</td><td><b>Lewis Hamilton</b></td><td>Mercedes</td><td>363</td></tr>
+                    <tr class="winner-ros"><td>2016</td><td><b>Nico Rosberg</b></td><td>Mercedes</td><td>385</td></tr>
+                    <tr class="winner-ham"><td>2015</td><td><b>Lewis Hamilton</b></td><td>Mercedes</td><td>381</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="standings" class="hidden-section">
+        <h2 class="section-title">Championship Battle 2025</h2>
+        <div class="table-container">
+            <table class="standings-table">
+                <thead>
+                    <tr>
+                        <th width="10%">Pos</th>
+                        <th width="40%">Driver</th>
+                        <th width="30%">Team</th>
+                        <th width="20%" style="text-align: right;">Points</th>
+                    </tr>
+                </thead>
+                <tbody id="standings-body">
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="highlights" class="video-section hidden-section">
+        <h2 class="section-title">Race Highlights</h2>
+        <div class="video-grid">
+            <div class="video-wrapper">
+                <video controls width="100%" class="f1-video" poster="images/Race Highlights   2025 Hungarian Grand Prix.jpg">
+                    <source src="images/h1.mp4" type="video/mp4">
+                    <p style="color:white; padding: 20px;">Video 1 Placeholder</p>
+                </video>
+            </div>
+            <div class="video-wrapper">
+                <video controls width="100%" class="f1-video" poster="images/Race Highlights   2025 Las Vegas Grand Prix.jpg">
+                    <source src="images/h2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-wrapper">
+                <video controls width="100%" class="f1-video" poster="images/Race Highlights   2025 Sao Paulo Grand Prix.jpg">
+                    <source src="images/h3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-wrapper">
+                <video controls width="100%" class="f1-video" poster="images/Race Highlights   2025 United States Grand Prix.jpg">
+                    <source src="images/h4.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="feedback-section hidden-section">
+    <h2 class="section-title">Fan Feedback</h2>
+    <form id="feedbackForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        
+        <input type="email" name="email" placeholder="Your Email" required>
+        
+        <textarea name="message" rows="5" placeholder="Your thoughts on the season..." required></textarea>
+        
+        <button class="f1-btn" id="submit-btn" aria-live="polite">
+            <span class="spinner"></span>
+            <span class="check-icon">✓</span>
+            <span class="btn-text">Submit Feedback</span>
+        </button>
+        <p id="form-status" style="margin-top:10px; font-size: 0.9rem;"></p>
+    </form>
+</section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>F1 Bomboclat</h3>
+            <div class="social-links">
+                <div class="social-box">IG</div>
+                <div class="social-box">X</div>
+                <div class="social-box">YT</div>
+            </div>
+            <p class="copyright">&copy; 2025 F1 Bomboclat. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
